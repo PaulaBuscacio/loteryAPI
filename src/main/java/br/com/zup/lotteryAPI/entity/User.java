@@ -2,16 +2,13 @@ package br.com.zup.lotteryAPI.entity;
 
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class User implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(unique = true)
     private String email;

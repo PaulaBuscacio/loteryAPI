@@ -1,24 +1,24 @@
 package br.com.zup.lotteryAPI.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Entity
-public class Bet  implements Serializable{
+public class Bet  {
 
-    private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long betId;
     private String luckyNumbers;
 
-
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = User.class)
+    @JsonIgnore
+    @ManyToOne
     private User user;
 
     @JoinColumn(name="userEmail", referencedColumnName = "email")

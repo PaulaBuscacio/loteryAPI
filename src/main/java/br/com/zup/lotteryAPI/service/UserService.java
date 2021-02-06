@@ -21,13 +21,6 @@ public class UserService {
     BetRepository betRepository;
 
     public User saveUser(User user) {
-        List<Bet> bets = new ArrayList<>();
-//        if (bets !=null && !bets.isEmpty()) {
-//       bets.stream().map((betId) -> betRepository.getOne(betId.getBetId())).collect(Collectors.toList());
-//        }
-
-        user.setEmail(user.getEmail());
-
 
         return userRepository.save(user);
     }

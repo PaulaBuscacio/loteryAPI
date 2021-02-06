@@ -22,7 +22,6 @@ public class BetService {
         bet.setUser(userRepository.findByEmail(bet.getUserEmail()));
         bet.setLuckyNumbers(bet.getLuckyNumbers());
 
-
         return betRepository.save(bet);
     }
 

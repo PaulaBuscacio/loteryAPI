@@ -34,9 +34,6 @@ public class UserController {
 
     @PostMapping("/user")
     public User saveUser(@RequestBody User user) {
-      User newUser = new User();
-
-      newUser.setEmail(user.getEmail());
 
       return userService.saveUser(user);
     }
@@ -54,12 +51,8 @@ public class UserController {
 
     @PostMapping("/newBet/{userEmail}")
     public Bet saveBet(Bet bet) {
-        Bet newBet = new Bet();
 
-        newBet.setLuckyNumbers(bet.getLuckyNumbers());
-        newBet.setUserEmail(bet.getUserEmail());
-
-        return betService.saveBet(newBet);
+        return betService.saveBet(bet);
     }
 
 }
